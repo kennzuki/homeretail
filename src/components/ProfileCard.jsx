@@ -1,4 +1,7 @@
+import {useNavigate } from 'react-router-dom'
+
 const ProfileCard = () => {
+    const navigate = useNavigate();
   const workers = [
     {
       id: 1,
@@ -37,7 +40,16 @@ const ProfileCard = () => {
                   <p className="font-bold">{worker.name}</p>
                   <p className="text-sm text-gray-500">{worker.jobTitle}</p>
                   <p className="">{worker.description}</p>
-                </div>
+                  <div className="mt-6 flex justify-center space-x-4">
+          <button onClick={()=>navigate('/contact')} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300">
+            Contact
+          </button>
+          <button className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors duration-300">
+            View Profile
+          </button>
+        </div>
+              </div>
+              
      ))}
      
         
