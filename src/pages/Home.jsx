@@ -1,10 +1,12 @@
+import Banner from "../components/Banner";
 
 
 
 const Home = () => {
   return (
-      <div>
-         <p className="">home</p>
+      <div className="mt-8 border-t p-6">
+         
+      <Banner/>
           
     </div>
   )
