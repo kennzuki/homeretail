@@ -24,9 +24,9 @@ const Navbar = () => {
   return (
     <header className='bg-orange-500 text-white dark:bg-black dark:text-white'>
       <nav className='p-4 flex justify-between gap-6 place-items-center max-w-7xl mx-auto'>
-        <a href='' className='text-3xl text-white font-bold uppercase'>
+        <Link to={'/'} className='text-3xl text-white font-bold uppercase'>
           Kenki Estate
-        </a>
+        </Link>
         {/* nav links */}
         <ul className='md:flex place-items-center gap-12 text-lg hidden'>
           {navItems.map(({ path, link }) => (
@@ -38,6 +38,7 @@ const Navbar = () => {
           <button className='border-2 border-white py-2 px-4 rounded-xl flex gap-2 place-items-center'>
            <Link navigate={'/contact'}></Link> Contacts <FaArrowRight />
           </button>
+       
         </ul>
         {/* small screen */}
         <div className=''>
@@ -66,6 +67,8 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
+      
+     
     </header>
   );
 };
