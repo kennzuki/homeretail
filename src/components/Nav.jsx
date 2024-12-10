@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-Link
+
 
 const Nav = () => {
   return (
@@ -9,7 +9,7 @@ const Nav = () => {
       <Link to='/rent'>Rent</Link> 
     </button>
     <button className='border-2 border-white py-2 px-4 flex gap-2 place-items-center'>
-      <Link to='/add-property'>Add Property</Link> 
+      <Link to='/listing'>Listings</Link> 
     </button>
     <button className='border-2 border-white py-2 px-4  flex gap-2 place-items-center'>
       <Link to='/sign-in'>Sign in</Link> 

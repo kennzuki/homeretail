@@ -1,9 +1,11 @@
-
+import Listing from './Listing';
 
 const AddProperty = () => {
   return (
-    <div>AddProperty</div>
-  )
-}
+    <div>
+      <Listing />
+    </div>
+  );
+};
 
-export default AddProperty
+export default AddProperty;

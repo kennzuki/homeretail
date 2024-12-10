@@ -1,9 +1,11 @@
-
+import Listing from './Listing';
 
 const Properties = () => {
   return (
-    <div>Properties</div>
-  )
-}
+    <div>
+      <h2 className=''>Properties</h2>
+    </div>
+  );
+};
 
-export default Properties
+export default Properties;
