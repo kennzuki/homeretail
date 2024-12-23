@@ -1,6 +1,10 @@
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import supabase from '../supabaseConfig';
 
 const Listing = () => {
+  const [listings, setListings] = useState([]);
+
   const {
     register,
     handleSubmit,
@@ -9,10 +13,18 @@ const Listing = () => {
     getValues,
   } = useForm();
 
-  const onSubmit = (data) => {
-    // await new Promise((resolve) =>setTimeout(resolve,1000)
-   data;
+  const onSubmit = async (data) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     reset();
+  };
+
+  const getListings = async () => {
+    const { data, error } = await supabase.from('homeretail').select('*');
+    if (error) {
+      console.log('error in fetching todo list', error);
+    } else {
+      setListings(data);
+    }
   };
 
   return (
@@ -33,7 +45,7 @@ const Listing = () => {
           {...register('title', { required: true })}
         />
         {errors.title && (
-          <p className="text-red-500">{`${errors.title.message}`}</p>
+          <p className='text-red-500'>{`${errors.title.message}`}</p>
         )}
         <input
           type='email'
@@ -98,7 +110,10 @@ const Listing = () => {
           className=''
           {...register('file', { required: true })}
         />
-        <button disabled={isSubmitting} className='py-2 px-4 rounded font-bold w-1/2 text-white bg-orange-500 mt-4'>
+        <button
+          disabled={isSubmitting}
+          className='py-2 px-4 rounded font-bold w-1/2 text-white bg-orange-500 mt-4'
+        >
           Add Listing
         </button>
       </form>
