@@ -1,9 +1,14 @@
-import Listing from './Listing';
+import PropertyCard from "../components/PropertyCard";
+
 
 const Properties = () => {
+
+
   return (
-    <div>
-      <h2 className=''>Properties</h2>
+    <div className="p-12">
+      <h2 className='text-3xl font-bold'>Properties</h2>
+      <PropertyCard/>
+    
     </div>
   );
 };

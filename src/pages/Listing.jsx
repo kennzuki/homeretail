@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
+import { useState} from 'react';
 import supabase from '../supabaseConfig';
 
 const Listing = () => {
@@ -18,14 +18,7 @@ const Listing = () => {
     reset();
   };
 
-  const getListings = async () => {
-    const { data, error } = await supabase.from('homeretail').select('*');
-    if (error) {
-      console.log('error in fetching todo list', error);
-    } else {
-      setListings(data);
-    }
-  };
+
 
   return (
     <div className='border space-y-4 mx-auto p-12 w-1/2 rounded-xl mt-8 '>
@@ -91,10 +84,10 @@ const Listing = () => {
           name=''
           id=''
           className=' w-[400px] p-4 border rounded'
-          placeholder='Add house type'
-          {...register('houseType', { required: true })}
+          placeholder='property type'
+          {...register('property_type', { required: true })}
         >
-          <option>Type of house</option>
+          <option>Property Type </option>
           <option value='1'>Bungalow</option>
           <option value='2'>Apartments</option>
           <option value='3'>Bedsitter</option>
@@ -117,6 +110,8 @@ const Listing = () => {
           Add Listing
         </button>
       </form>
+
+      
     </div>
   );
 };
